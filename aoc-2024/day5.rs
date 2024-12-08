@@ -23,7 +23,6 @@ pub fn part1(input: &str) -> i32 {
         let mut success = true;
         for x in order.clone() {
             if let Some(before) = before_map.get(&x) {
-                // println!("{:?} {:?}", x, before);
                 if before.iter().any(|&y| visited.contains(y)) {
                     success = false;
                     break;
@@ -34,9 +33,7 @@ pub fn part1(input: &str) -> i32 {
 
         if success {
             total += order.get(order.len() / 2).unwrap().parse::<i32>().unwrap();
-            // println!("total: {}", total);
         }
-        // println!("---");
     });
 
     total

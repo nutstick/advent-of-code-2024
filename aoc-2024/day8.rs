@@ -99,7 +99,6 @@ pub fn part2(input: &str) -> i32 {
         }
     }
 
-    println!("{:?}", map);
     for i in 0..map.size.0 {
         for j in 0..map.size.1 {
             if let Some(c) = map.get(i, j) {

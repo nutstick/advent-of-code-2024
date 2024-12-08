@@ -4,7 +4,6 @@ use regex::Regex;
 pub fn part1(input: &str) -> i32 {
     let mut total = 0;
     let re = Regex::new(r"mul\(([0-9]{1,3}),([0-9]{1,3})\)").unwrap();
-    println!("{:?}", re.is_match(input));
     for captures in re.captures_iter(input) {
         let (_, [a, b]) = captures.extract();
         total += a.parse::<i32>().unwrap() * b.parse::<i32>().unwrap();
