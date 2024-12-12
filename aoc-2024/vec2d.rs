@@ -32,13 +32,6 @@ impl<T> Vec2D<T> {
         Some(&self.data[x * self.size.1 + y])
     }
 
-    pub fn get_i32(&self, x: i32, y: i32) -> Option<&T> {
-        if x < 0 || y < 0 || x as usize >= self.size.0 || y as usize >= self.size.1 {
-            return None;
-        }
-        Some(&self.data[x as usize * self.size.1 + y as usize])
-    }
-
     pub fn set(&mut self, x: usize, y: usize, value: T) {
         if x >= self.size.0 || y >= self.size.1 {
             return;
