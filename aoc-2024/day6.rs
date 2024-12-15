@@ -64,6 +64,7 @@ pub fn part1(input: &str) -> i32 {
                     }
                 }
             }
+            _ => {}
         }
     }
 
@@ -132,6 +133,7 @@ fn is_loop(map: &Vec2D<char>, start: (usize, usize)) -> bool {
                     return false;
                 }
             }
+            _ => {}
         }
     }
 

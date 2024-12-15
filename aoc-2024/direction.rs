@@ -4,6 +4,10 @@ pub enum Direction {
     Down,
     Left,
     Right,
+    UpLeft,
+    UpRight,
+    DownLeft,
+    DownRight,
 }
 
 impl Direction {
@@ -26,6 +30,10 @@ impl From<Direction> for (isize, isize) {
             Direction::Down => (1, 0),
             Direction::Left => (0, -1),
             Direction::Right => (0, 1),
+            Direction::UpLeft => (-1, -1),
+            Direction::UpRight => (-1, 1),
+            Direction::DownLeft => (1, -1),
+            Direction::DownRight => (1, 1),
         }
     }
 }
