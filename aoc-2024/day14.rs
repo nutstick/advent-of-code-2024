@@ -127,9 +127,6 @@ pub fn part2(input: &str) -> i32 {
         .collect_vec();
 
     for i in 0..1000000 {
-        if i % 1000 == 0 {
-            println!("{}", i);
-        }
         for robot in robots.iter_mut() {
             robot.next();
         }
@@ -145,9 +142,8 @@ pub fn part2(input: &str) -> i32 {
         if connections < 300 {
             println!("{}", map);
             println!("{} {}", i + 1, connections);
-            // wait for input
-            let mut input = String::new();
-            std::io::stdin().read_line(&mut input).unwrap();
+
+            return i + 1;
         }
     }
 
