@@ -34,6 +34,19 @@ impl Direction {
             Direction::DownRight => Direction::UpLeft,
         }
     }
+
+    pub fn clockwise(self) -> Self {
+        match self {
+            Direction::Up => Direction::Right,
+            Direction::Down => Direction::Left,
+            Direction::Left => Direction::Up,
+            Direction::Right => Direction::Down,
+            Direction::UpLeft => Direction::UpRight,
+            Direction::UpRight => Direction::DownRight,
+            Direction::DownLeft => Direction::UpLeft,
+            Direction::DownRight => Direction::DownLeft,
+        }
+    }
 }
 
 impl From<Direction> for (isize, isize) {
