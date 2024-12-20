@@ -38,6 +38,35 @@ impl<T> Vec2D<T> {
         }
         self.data[x * self.size.1 + y] = value;
     }
+
+    pub fn find_first(&self, value: T) -> Option<(usize, usize)>
+    where
+        T: PartialEq,
+    {
+        for i in 0..self.size.0 {
+            for j in 0..self.size.1 {
+                if self.data[i * self.size.1 + j] == value {
+                    return Some((i, j));
+                }
+            }
+        }
+        None
+    }
+
+    pub fn find_all(&self, value: T) -> Vec<(usize, usize)>
+    where
+        T: PartialEq,
+    {
+        let mut result = Vec::new();
+        for i in 0..self.size.0 {
+            for j in 0..self.size.1 {
+                if self.data[i * self.size.1 + j] == value {
+                    result.push((i, j));
+                }
+            }
+        }
+        result
+    }
 }
 
 impl Debug for Vec2D<char> {
