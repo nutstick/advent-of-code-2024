@@ -109,3 +109,15 @@ impl Display for Vec2D<char> {
         Ok(())
     }
 }
+
+impl Debug for Vec2D<i32> {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        for i in 0..self.size.0 {
+            for j in 0..self.size.1 {
+                write!(f, "{} ", self.data[i * self.size.1 + j])?;
+            }
+            writeln!(f)?;
+        }
+        Ok(())
+    }
+}
